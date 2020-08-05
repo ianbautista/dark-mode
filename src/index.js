@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import "./styles.scss";
 
 import { useDarkMode } from "../src/hooks/useDarkMode";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const App = () => {
 	const [coinData, setCoinData] = useState([]);
@@ -23,11 +24,16 @@ const App = () => {
 	}, []);
 	return (
 		<div className={darkMode ? "dark-mode App" : "App"}>
-			<Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+			<Navbar darkMode={darkMode} setDarkMode={setDarkMode} coinData={coinData} />
 			<Charts coinData={coinData} />
 		</div>
 	);
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+	<Router>
+		<App />
+	</Router>,
+	rootElement,
+);

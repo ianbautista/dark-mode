@@ -16,15 +16,15 @@ In this project you'll take this crypto currency tracker app and build two custo
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] CD into the project base directory `cd dark-mode`
-- [ ] Download project dependencies by running `npm install`
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your team lead as collaborator on Github.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] CD into the project base directory `cd dark-mode`
+- [x] Download project dependencies by running `npm install`
+- [x] Start up the app using `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
@@ -56,10 +56,10 @@ This is going to be a pretty cool hook. It will be used pretty much the same way
 // To retrieve an item from localStorage, call localStorage.getItem('itemName')
 // If that item doesn't exist, it will return undefined
 const [storedValue, setStoredValue] = useState(() => {
-  // Get from local storage by key
-  const item = window.localStorage.getItem(key);
-  // Parse and return stored json or, if undefined, return initialValue
-  return item ? JSON.parse(item) : initialValue;
+	// Get from local storage by key
+	const item = window.localStorage.getItem(key);
+	// Parse and return stored json or, if undefined, return initialValue
+	return item ? JSON.parse(item) : initialValue;
 });
 ```
 
@@ -69,12 +69,12 @@ const [storedValue, setStoredValue] = useState(() => {
 import { useState } from "react";
 
 export const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(() => {
-    const item = window.localStorage.getItem(key);
-    return item ? JSON.parse(item) : initialValue;
-  });
+	const [storedValue, setStoredValue] = useState(() => {
+		const item = window.localStorage.getItem(key);
+		return item ? JSON.parse(item) : initialValue;
+	});
 
-  return [storedValue];
+	return [storedValue];
 };
 ```
 
@@ -86,11 +86,11 @@ export const useLocalStorage = (key, initialValue) => {
   - `setValue` should look something like this:
 
 ```js
-const setValue = value => {
-  // Save state
-  setStoredValue(value);
-  // Save to local storage
-  window.localStorage.setItem(key, JSON.stringify(value));
+const setValue = (value) => {
+	// Save state
+	setStoredValue(value);
+	// Save to local storage
+	window.localStorage.setItem(key, JSON.stringify(value));
 };
 ```
 
